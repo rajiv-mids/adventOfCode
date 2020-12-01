@@ -20,11 +20,10 @@ def lookfor(nums_map, nums_orig, num, skip):
     return None, None
 
 #part 1
-for i, v in enumerate(nums_orig):
-    n2, n3 = lookfor(nums, nums_orig, 2020, i)
-    if n2 is not None:
-        print( n2 * n3)
-        break
+n2, n3 = lookfor(nums, nums_orig, 2020, i)
+if n2 is not None:
+    print( n2 * n3)
+
 #part 2
 for i, v in enumerate(nums_orig):
     lf = 2020-v
