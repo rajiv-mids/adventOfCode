@@ -35,4 +35,4 @@ with open("/home/rajivn/adventOfCode/05/input", "r") as input:
 
 print(max)
 print("seating starts", m_r, "seating ends", x_r)
-print(seats) # make an educated guess from here!
+print("seat missing", seats)
