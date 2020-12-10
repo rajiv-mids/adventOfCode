@@ -7,7 +7,7 @@ inp_sort = inp_sort + [inp_sort[-1] + 3]
 last = 0
 diffs_1, diffs_3 = 0, 0
 ways_to_get_to = {0:1}
-for n, v in enumerate(inp_sort):
+for v in inp_sort:
     diff = v-last
     if diff == 3:
         diffs_3 += 1
