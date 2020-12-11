@@ -5,26 +5,12 @@ with open("/home/rajivn/adventOfCode/11/input", "r") as inp:
     for row, line in enumerate(inp.readlines()):
         for col, x in enumerate(line):
             seating[(row, col)] = x
-
-
 max_r = row
 max_c = col
 changes = -1
 
-def print_seating(s):
-    for row in range(max_r + 1):
-        for col in range(max_c + 1):
-            print(s[(row, col)], end="")
-        print()
-
-p = 0
-#print_seating(seating)
 part_2_flag = True
 
-# part 2. Each location has an array of length 8 for each surrounding cell starting from top left and going clockwise
-# For first row only fill (None, None, None, X, None, None, None, None). 
-# For second row fill (X,X,X,X,None, None, None, None)
-# Second pass start bottom right to top left and fill in missing 
 def preprocess(seating):
     ss = dict()
     for row in range(max_r+1):
@@ -48,7 +34,6 @@ def preprocess(seating):
                 else:
                     ss[(row,col)][i+4] = ss.get((row+r, col+c), [None]*8)[i+4]
     return ss
-
 
 while changes != 0:
     changes = 0
@@ -82,13 +67,9 @@ while changes != 0:
                         break
     if changes != 0:
         seating = s2
-        #print_seating(seating)
-        #print("\n")
-#    p+=1
 s_occ = 0
 for row in range(max_r + 1):
     for col in range(max_c + 1):
         if seating.get((row, col), "") == "#":
             s_occ += 1
 print (s_occ)
-
