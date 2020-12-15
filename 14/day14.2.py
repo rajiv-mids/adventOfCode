@@ -2,7 +2,6 @@
 from collections import defaultdict
 import re
 import itertools
-mem = defaultdict(int)
 mask = None
 memvals = dict()
 
@@ -40,10 +39,6 @@ with open("/home/rajivn/adventOfCode/14/input", "r") as inp:
             # apply mask and write value
             loc = int(inx[inx.index("[")+1:inx.index("]")].strip())
             val = int(val.strip())
-            l_mask1 = do_mask_1(loc, mask)
-
-            floats = [m.start() for m in re.finditer('X', l_mask1)]
-            cur_tot = pow(2, len(floats)) * val
-            
+            l_mask1 = do_mask_1(loc, mask)            
             apply(l_mask1, val)
-    print("verify", sum([v for v in memvals.values()]))
+    print("part 2", sum([v for v in memvals.values()]))
