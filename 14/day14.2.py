@@ -46,7 +46,4 @@ with open("/home/rajivn/adventOfCode/14/input", "r") as inp:
             cur_tot = pow(2, len(floats)) * val
             
             apply(l_mask1, val)
-
-    print("part 2", tot)
     print("verify", sum([v for v in memvals.values()]))
-
