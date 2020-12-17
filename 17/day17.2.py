@@ -8,8 +8,7 @@ for y, line in enumerate(lines.split()):
     for x, st in enumerate(line):
         if st == "#":
             state.add((x, y, 0, 0))
-mx, my, mz, mw = [0,2],[0,2],[0,1],[0,1]
-
+            
 for step in range(6):
     newstate = deepcopy(state)
     neighbors = defaultdict(int)
