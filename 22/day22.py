@@ -18,17 +18,14 @@ def part1(p1, p2):
             p2.append(a)
     return p1 if len(p1) > 0 else p2
 
-def to_str(cards):
-    return "".join([str(c) for c in cards])
-
 def rcombat(p1, p2, prior1, prior2, depth):
     round = 0
     while True:
         round += 1
-        if to_str(p1) in prior1 or to_str(p2) in prior2:
+        if tuple(p1) in prior1 or tuple(p2) in prior2:
             return 1, p1
-        prior1.add(to_str(p1))
-        prior2.add(to_str(p2))
+        prior1.add(tuple(p1))
+        prior2.add(tuple(p2))
         a, b = p1.popleft(), p2.popleft()
         if a <= len(p1) and b <= len(p2):
             p1c = deque(list(p1)[:a])
