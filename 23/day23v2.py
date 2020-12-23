@@ -1,8 +1,4 @@
 #!/home/rajivn/anaconda3/bin/python
-from itertools import cycle
-from copy import deepcopy
-
-
 class Node:
     def __init__(self, ch):
         self.val = ch
@@ -19,7 +15,6 @@ def printcircle(node):
     for _ in range(9):
         print(str(node.val)+ " ", end="")
         node = node.next
-
 
 def docircle(cur_ptr, moves, maxidx):
     for _ in range(moves):
