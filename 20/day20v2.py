@@ -31,12 +31,6 @@ class Tile:
             to_str += "\n"
         return to_str
 
-    def join(self, other):
-        return np.concatenate((self.data, other.data), axis=1)
-    
-    def append(self, other):
-        return np.concatenate((self.data, other.data), axis=0)
-
     def trim(self):
         st, en = 1, len(self.data)-1
         self.data = self.data[st:en, st:en]
