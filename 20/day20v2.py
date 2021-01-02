@@ -163,7 +163,6 @@ while rnode is not None:
     rnode = rnode.linked["B"]
 
 final = Tile("All", np_data=data_all)
-final.rotate(3)
 
 monsters = 0
 for _ in range(4):
