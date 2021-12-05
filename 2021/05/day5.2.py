@@ -1,10 +1,5 @@
 import os
 from collections import defaultdict
-import numpy
-
-def getEquidistantPoints(p1, p2, parts):
-    return zip(numpy.linspace(p1[0], p2[0], parts+1),
-               numpy.linspace(p1[1], p2[1], parts+1))
 
 path = os.path.dirname(os.path.abspath(__file__))
 with open(path+"/input", "r") as inp:
